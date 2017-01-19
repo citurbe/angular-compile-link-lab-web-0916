@@ -2,11 +2,14 @@ function SomeDirective() {
 	return {
 		template: [
 			'<div>',
-				'Replace this text!',
+				'{{text}}',
 			'</div>'
 		].join(''),
-		link: function (scope, elem, attrs) {
-
+		link: function ($scope, $elem, $attrs) {
+			this.text = "Replace this text!"
+		},
+		compile: function($scope, $elem, $attrs) {
+			this.text = "goodbye!"
 		}
 	}
 }
